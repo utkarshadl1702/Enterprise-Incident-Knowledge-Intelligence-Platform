@@ -1,0 +1,21 @@
+GitHub + NVD + CISA + Incidents
+              ↓
+             S3
+              ↓
+           Airflow
+              ↓
+         Databricks
+              ↓`
+           PySpark
+              ↓
+        Delta Tables
+              ↓
+       ┌──────┴──────┐
+       ↓             ↓
+   SQL Analytics    RAG
+                       ↓
+                  Vector DB
+                       ↓
+                    FastAPI
+                       ↓
+              Engineering Assistant
