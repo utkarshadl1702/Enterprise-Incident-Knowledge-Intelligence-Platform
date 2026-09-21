@@ -19,3 +19,14 @@ GitHub + NVD + CISA + Incidents
                     FastAPI
                        ↓
               Engineering Assistant
+
+
+To run airflow:-
+source airflow-venv/bin/activate
+
+AIRFLOW__CORE__LOAD_EXAMPLES=False \
+airflow-venv/bin/airflow webserver \
+  --host 127.0.0.1 \
+  --port 8080 \
+  --workers 1 \
+  --daemon
