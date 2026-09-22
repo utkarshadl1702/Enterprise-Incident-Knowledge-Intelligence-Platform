@@ -1,9 +1,11 @@
 from datetime import datetime
 import sys
+from pathlib import Path
 
-from airflow.decorators import dag, task
 
-sys.path.insert(0, "/Users/utkarshadlakha/Documents/Enterprise-Incident-Knowledge-Intelligence-Platform")
+from airflow.decorators import dag, task 
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from ingestion.github_issues import main
 
@@ -11,7 +13,7 @@ from ingestion.github_issues import main
 @dag(
     dag_id="github_issues_ingestion",
     start_date=datetime(2026, 1, 1),
-    schedule="@daily",
+    schedule="@hourly",
     catchup=False,
     tags=["github", "ingestion"],
 )
