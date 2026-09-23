@@ -8,7 +8,7 @@ from ingestion.github_issues import main_new_issues
 @dag(
     dag_id="github_new_issues_ingestion",
     start_date=datetime(2026, 1, 1),
-    schedule=None,
+    schedule="*/15 * * * *",
     catchup=False,
     tags=["github", "issues", "ingestion"],
 )

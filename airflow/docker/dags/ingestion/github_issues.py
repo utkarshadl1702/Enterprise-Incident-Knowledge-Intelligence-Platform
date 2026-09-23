@@ -95,7 +95,7 @@ def main_new_issues(since):
         print("No new GitHub issues found")
         return
 
-    s3_key = _upload_to_s3(issues, s3_bucket, "raw/github-issues/new")
+    s3_key = _upload_to_s3(issues, s3_bucket, "raw/github-issues")
     print(f"Found {len(issues)} new issues")
     print(f"Uploaded to s3://{s3_bucket}/{s3_key}")
 
