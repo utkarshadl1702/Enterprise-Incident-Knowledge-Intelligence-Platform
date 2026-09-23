@@ -3,11 +3,11 @@ import sys
 from pathlib import Path
 
 
-from airflow.decorators import dag, task 
+from airflow.decorator import dag, task 
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from ingestion.github_issues import main
+from airflow.docker.dags.ingestion.github_issues import main
 
 
 @dag(

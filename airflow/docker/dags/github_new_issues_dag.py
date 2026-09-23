@@ -1,11 +1,6 @@
-import sys
-from pathlib import Path
-
 from airflow.decorators import dag, task
 from airflow.operators.python import get_current_context
 from pendulum import datetime
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from ingestion.github_issues import main_new_issues
 
@@ -13,7 +8,7 @@ from ingestion.github_issues import main_new_issues
 @dag(
     dag_id="github_new_issues_ingestion",
     start_date=datetime(2026, 1, 1),
-    schedule="*/5 * * * *",
+    schedule=None,
     catchup=False,
     tags=["github", "issues", "ingestion"],
 )
